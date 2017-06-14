@@ -6,10 +6,10 @@
         id        = "ailia martin"
         version   = "1.0.0">
 
-    <name>Police App</name>
+    <name>Currency Conversion App</name>
 
     <description>
-        A police app that makes a siren.
+        An app that converts to multiple currencies
     </description>
 
     <author email="ailia.vmd@gmail.com">
