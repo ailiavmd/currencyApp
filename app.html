@@ -1,0 +1,301 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Currency App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" href="css/app.css">
+    </head>
+    <body>
+        
+        <div id="app">
+            
+            <h1>The Currency Conversion App</h1>
+            
+            <label for="amount">Input quantity</label>
+            <div class="row">
+                <input type="number" id="amount" onChange="convert()" pattern="[0-9]*" inputmode="numeric" step="any" placeholder="Amount" autofocus>
+
+                <select id="amountCurrency" onChange="convert()">
+                    <option value="cad">CAD</option>
+                    <option value="euro">Euro</option>
+                    <option value="yen">Yen</option>
+                    <option value="usd">USD</option>
+                    <option value="rand">South African Rand</option>
+                    <option value="rupiah">Indonesian Rupiah</option>
+                    <option value="pound">Pound Sterling</option>
+                </select>
+            </div>
+            
+            <label for="conversion">Equals to</label>
+            <div class="row">
+                <div id="conversion">Select Input Currency</div>
+
+                <select id="resultCurrency" onChange="convert()">
+                    <option value="usd">USD</option>
+                    <option value="euro">Euro</option>
+                    <option value="yen">Yen</option>
+                    <option value="cad">CAD</option>
+                    <option value="rand">South African Rand</option>
+                    <option value="rupiah">Indonesian Rupiah</option>
+                    <option value="pound">Pound Sterling</option>
+                </select>
+            </div>
+            
+        </div>
+        
+        <script>
+            
+            function convert() {
+                var amount = document.getElementById('amount').value;
+                
+                if(amount !== "") {
+                    var amountCurr = document.getElementById("amountCurrency").value;
+                    var resultCurr = document.getElementById("resultCurrency").value;
+      
+                    var result;
+
+                    if(amountCurr === 'cad') {
+
+                        switch(resultCurr) {
+                            case 'usd':
+                                result = amount * 0.758985;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 0.673599524;
+                                break;
+                                
+                            case 'yen':
+                                result = amount * 82.9763857;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 9.58762301;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 10.04948;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 0.593142388;
+                                break;
+                                
+                            case 'cad':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+                    }
+
+                    else if(amountCurr === 'euro'){
+                        
+                        switch(resultCurr) {
+                            case 'usd':
+                                result = amount * 1.12676;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 1.48456162;
+                                break;
+                                
+                            case 'yen':
+                                result = amount * 123.183557;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 14.2334171;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 14.96264;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 0.880556424;
+                                break;
+                                
+                            case 'euro':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+
+                    else if(amountCurr === 'yen'){
+                        
+                        switch(resultCurr) {
+                            case 'usd':
+                                result = amount * 0.009147;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 0.0120516216;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 0.00811796656;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 0.115546404;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 121.96;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 0.0071483276;
+                                break;
+                                
+                            case 'yen':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+
+                    else if(amountCurr === 'usd'){
+                        
+                        switch(resultCurr) {
+                            case 'yen':
+                                result = amount * 109.325462;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 1.31891322;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 0.887500444;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 12.632164;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 13.3333333;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 0.780274657;
+                                break;
+                                
+                            case 'usd':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+
+                    else if(amountCurr === 'rand'){
+                        
+                        switch(resultCurr) {
+                            case 'yen':
+                                result = amount * 8.65453154;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 0.104728304;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 0.070397624;
+                                break;
+                                
+                            case 'usd':
+                                result = amount * 0.079405;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 1058.73333;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 0.0619577091;
+                                break;
+                                
+                            case 'rand':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+
+                    else if(amountCurr === 'rupiah'){
+                        
+                        switch(resultCurr) {
+                            case 'yen':
+                                result = amount * 0.00818866689;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 9.89184912;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 6.64923091;
+                                break;
+                                
+                            case 'usd':
+                                result = amount * 7.5;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 0.000944524904;
+                                break;
+                                
+                            case 'pound':
+                                result = amount * 5.85205993;
+                                break;
+                                
+                            case 'rupiah':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+
+                    else if(amountCurr === 'pound'){
+                        
+                        switch(resultCurr) {
+                            case 'yen':
+                                result = amount * 139.92794;
+                                break;
+                                
+                            case 'cad':
+                                result = amount * 1.69031918;
+                                break;
+                                
+                            case 'euro':
+                                result = amount * 1.13622058;
+                                break;
+                                
+                            case 'usd':
+                                result = amount * 1.2816;
+                                break;
+                                
+                            case 'rand':
+                                result = amount * 16.1400416;
+                                break;
+                                
+                            case 'rupiah':
+                                result = amount * 17088;
+                                break;
+                                
+                            case 'pound':
+                                document.getElementById("conversion").innerText = amount;
+                        }
+
+                    }
+                    
+                    if(result){
+                        result = result.toFixed(2);
+                        document.getElementById("conversion").innerText = result;
+                    }
+                }
+                    
+            }
+            
+        </script>
+       
+    </body>
+</html>
